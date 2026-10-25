@@ -1,0 +1,9 @@
+{
+  "id": "ermc",
+  "name": "ERMC",
+  "version": "${version}",
+  "main": "com.thmigu.ermc.ERMC",
+  "description": "The ERMC plugin (Velocity)",
+  "url": "https://www.essress.com",
+  "author": "THMIGU"
+}
