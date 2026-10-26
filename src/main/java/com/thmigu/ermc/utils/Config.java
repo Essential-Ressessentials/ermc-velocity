@@ -47,11 +47,19 @@ public final class Config {
         }
     }
 
-    public String ip() {
+    public String redisIp() {
         return toml.getString("redis.ip");
     }
 
-    public int port() {
+    public int redisPort() {
         return Objects.requireNonNull(toml.getLong("redis.port")).intValue();
+    }
+
+    public String restIp() {
+        return toml.getString("rest.ip");
+    }
+
+    public int restPort() {
+        return Objects.requireNonNull(toml.getLong("rest.port")).intValue();
     }
 }

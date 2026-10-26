@@ -11,8 +11,8 @@ public class Publisher {
 
 	@Inject
 	public Publisher(Config config) {
-		String ip = config.ip();
-		int port = config.port();
+		String ip = config.redisIp();
+		int port = config.redisPort();
 
 		this.client = RedisClient.create("redis://" + ip + ":" + port);
 	}

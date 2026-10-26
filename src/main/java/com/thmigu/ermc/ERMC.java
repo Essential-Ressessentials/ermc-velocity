@@ -13,8 +13,10 @@ public class ERMC {
 	private final ProxyServer server;
 	private final Subscriber subscriber;
 
+	private final PreLogin preLogin;
 	private final JoinLeave joinLeave;
 	private final Chat chat;
+
 	private final Sleep sleep;
 	private final Death death;
 	private final Discord discord;
@@ -23,6 +25,7 @@ public class ERMC {
 	public ERMC(
 		ProxyServer server,
 		Subscriber subscriber,
+		PreLogin preLogin,
 		JoinLeave joinLeave,
 		Chat chat,
 		Sleep sleep,
@@ -32,8 +35,10 @@ public class ERMC {
 		this.server = server;
 		this.subscriber = subscriber;
 
+		this.preLogin = preLogin;
 		this.joinLeave = joinLeave;
 		this.chat = chat;
+
 		this.sleep = sleep;
 		this.death = death;
 		this.discord = discord;
@@ -48,6 +53,7 @@ public class ERMC {
 	private void registerEvents() {
 		EventManager eventManager = server.getEventManager();
 
+		eventManager.register(this, preLogin);
 		eventManager.register(this, joinLeave);
 		eventManager.register(this, chat);
 	}

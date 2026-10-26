@@ -29,6 +29,14 @@ public class Components {
 			)
 	).build().color(NamedTextColor.YELLOW);
 
+	public final static Component NOT_WHITELISTED = Component.empty()
+			.append(LEAVE_ICON)
+			.append(Component.text(" You are not whitelisted! Sign up on Discord.", NamedTextColor.AQUA));
+
+	public final static Component SERVER_ERROR = Component.empty()
+			.append(LEAVE_ICON)
+			.append(Component.text(" The server is down right now. Come back later.", NamedTextColor.AQUA));
+
 	public static Component playerHead(UUID uuid) {
 		Component head = Component.object().contents(
 				ObjectContents.playerHead(uuid)
